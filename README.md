@@ -8,16 +8,17 @@ The CaML study utilized data from three primary sources to achieve its objective
 ## Data preprocessing:
 The process begins with lower casing, which ensures uniformity in text by converting all letters to lowercase. This is followed by the removal of punctuation and numbers.
 Removing Stop words:
-	Since the  product descriptions are in English, we systematically remove words that are frequently used but have little semantic significance for the purposes of our analysis. These consist of terms like "a," "the," and "and."
-Lemmatization:
-	This process transformed words to their root forms, leading to greater consistency across the dataset and enabling more efficient analysis in subsequent stages. Here the data in the column (descriptions) were lemetized.
-Key Phrase Extraction:
-	The process of automatically identifying significant terms that best capture the topic or primary ideas of a document or text is known as "key phrase extraction". Here we experimented with three methods:
-	YAKE: It is an unsupervised, lightweight method.It focuses on automatic keyword extraction from single documents utilizing statistical text features for keyword extraction.When experimented with YAKE. Too many keywords were extracted which actually created noise in the document. Hence this method was dropped.
-	KeyBERT: KeyBERT generates document embeddings using sentence-transformers. It compares pretrained multilingual models to unsupervised models for keyword extraction. When tried with keyBERT very few keywords were extracted which was not sufficient enough. Hence this method was also dropped. 
-	Amazon Comprehend: After reaching out to the author of the paper and based on his suggestion Amazon Comprehend was tried. It is used for semantic analysis of patents.
-It features capabilities such as clustering patents for topic modeling and identifying key terms/phrases.This method gave us better results.
-Removing duplicates, least common and most common words: Duplicate words are removed to avoid redundancy. The process also involves eliminating the most common generic words and the least common non-dictionary words to refine the dataset's relevance for example “manufacture”, “ product”. Products with less than five words and those with fewer than two consensus votes are dropped to maintain data quality. 
+	
+Lemmatization
+	
+Key Phrase Extraction
+	
+YAKE
+
+KeyBERT
+
+Amazon Comprehend
+
 Additionally, there is a mapping of CO2e/$ for each NAICS code’s description, providing an environmental impact assessment. Finally, the merged file is filtered to contain only descriptions of NAICS codes in the product annotations.
 
 # Expriments and their Result Table:
